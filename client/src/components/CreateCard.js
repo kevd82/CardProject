@@ -63,8 +63,8 @@ return (
         <form onSubmit={submitHandler} style={{textAlign: "left", marginLeft:"150px", marginRight:"150px", width:"200px"}} >
             <br/>
             <div>
-                <label>Name (18 character limit):  </label>
-                <input maxLength="18" value={name} onChange={(e)=> setName(e.target.value)} type="text"/>
+                <label>Name (20 character limit):  </label>
+                <input maxLength="20" value={name} onChange={(e)=> setName(e.target.value)} type="text"/>
                     <br/>
                     {
                         errors.name?

@@ -5,7 +5,7 @@ const CardSchema = new mongoose.Schema({
         type: String,
         
         minLength: [2, "Name must contain at least 2 characters!"],
-        maxLength: [18, "Name must not contain more than 18 characters!"],
+        maxLength: [20, "Name must not contain more than 20 characters!"],
         required: [true, "Name is required!"],
     },
 
