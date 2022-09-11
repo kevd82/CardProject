@@ -49,11 +49,11 @@ const Reg = (props)=>{
             <h1>Register</h1>
             {confirmReg ? <h4 style={{ color: "blue", fontWeight: "722" }}>{confirmReg}</h4> : null}
             <br/>
-            <h4>Username can be no longer than 30 characters.</h4>
+        
             <div style={{textAlign:"center", marginLeft:"auto", marginRight:"auto", width:"500px"}}></div>
             <form style={{marginLeft:"auto", marginRight:"auto", width: "100%", fontWeight: "622"}} onSubmit={register}>
                 <div>
-                    <label>Username</label>
+                    <label>Username: 30 characters or less</label>
                     <br/>
                     <input
                         minLength="2"

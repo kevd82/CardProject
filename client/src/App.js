@@ -8,6 +8,7 @@ import DisplayOne from "./components/DisplayOne";
 import UpdateCard from "./components/UpdateCard";
 import LoginReg from "./views/LoginReg";
 
+
 function App() {
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/displayOne/:id" element={<DisplayOne/>} />
         <Route path="/update/:id" element={<UpdateCard/>} />
         <Route path="/displayAll" element={<DisplayAll/>}/>
+        
         
 
       </Routes>

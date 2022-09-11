@@ -78,6 +78,7 @@ useEffect(() => {
     return (
     <div>
         <h1>Burning Sands Character Cards</h1>
+        <h3>Please click "Show Card" to  view and download printable card.</h3>
             <br/>
             <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}><Link style={{color: "black"}} to = {"/createCard"}>Add new card</Link></button> <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", padding: "15px 32px", backgroundSize: "100%", margin: "22px", fontWeight: "622"}} onClick= {logout}>Logout</button> 
             <br/>
@@ -145,9 +146,9 @@ useEffect(() => {
                     
                             
                             <td style={{outline:"1px solid black", padding: "5px"}}>
-                                <button className="button" style = {{backgroundColor: "red", fontSize: "14px", fontWeight: "822", borderRadius: "12px"}}> <Link style={{color: "black"}} to={`/displayOne/${card._id}`}>Show <br/>card</Link></button>
-                                <button style = {{backgroundColor: "red", color: "red", fontSize: "14px", fontWeight: "822", marginLeft: "42px", marginRight: "42px", borderRadius: "12px"}}><Link style={{color: "black"}} to={`/update/${card._id}`}>Update <br/>card </Link></button>
-                                <button style = {{backgroundColor: "red", fontSize: "14px", fontWeight: "822", borderRadius: "12px"}} onClick={()=>deleteCard(card._id)}>Delete<br/>card</button>
+                                <button className="button" style = {{backgroundColor: "red", fontSize: "14px", fontWeight: "822", borderRadius: "12px"}}> <Link style={{color: "black"}} to={`/displayOne/${card._id}`}>Show <br/>Card</Link></button>
+                                <button style = {{backgroundColor: "red", color: "red", fontSize: "14px", fontWeight: "822", marginLeft: "42px", marginRight: "42px", borderRadius: "12px"}}><Link style={{color: "black"}} to={`/update/${card._id}`}>Update <br/>Card </Link></button>
+                                <button style = {{backgroundColor: "red", fontSize: "14px", fontWeight: "822", borderRadius: "12px"}} onClick={()=>deleteCard(card._id)}>Delete<br/>Card</button>
                             </td>
                         
                            
@@ -226,7 +227,7 @@ useEffect(() => {
                         
                             
                         
-                        <button style = {{backgroundColor: "red", fontSize: "14px", fontWeight: "822", marginLeft: "5px", marginRight: "5px", borderRadius: "12px"}}><Link style={{color: "black"}} to={`/displayOne/${card._id}`}>Show <br/>card</Link></button>
+                        <button style = {{backgroundColor: "red", fontSize: "14px", fontWeight: "822", marginLeft: "5px", marginRight: "5px", borderRadius: "12px"}}><Link style={{color: "black"}} to={`/displayOne/${card._id}`}>Show <br/>Card</Link></button>
             
                         
                         </td>
