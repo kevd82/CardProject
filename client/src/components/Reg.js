@@ -13,9 +13,14 @@ const Reg = (props)=>{
     const [errors, setErrors] = useState({});
     const navigate = useNavigate;
 
+    
+
+
 
     const register = (e)=>{
         e.preventDefault();
+        
+        
         axios.post("http://localhost:8000/api/user/register",{
             username: username,
             email: email,
@@ -60,12 +65,14 @@ const Reg = (props)=>{
                         maxLength="30"
                         type="text"
                         name="username"
+                    
                         value={username}
                         onChange={(e) => setUserName(e.target.value)}
+
                     />
-                     {
+                    {
                         errors.username ?
-                        <p style={{color: "red", fontWeight: "722"}}>{errors.username.message}</p>
+                        <p style={{color: "red", fontWeight: "722"}}>{username} is already in use; please try again.</p>
                         :null
                     }
             
@@ -77,6 +84,7 @@ const Reg = (props)=>{
                         type="email"
                         name="email"
                         value={email}
+                        
                         onChange={(e)=> setEmail(e.target.value)}
                     />
                     {
@@ -92,6 +100,7 @@ const Reg = (props)=>{
                         type="password"
                         name="password"
                         value={password}
+                        
                         onChange={(e)=> setPassword(e.target.value)}
                     />
                     {
@@ -108,6 +117,7 @@ const Reg = (props)=>{
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
+                        
                         onChange={(e)=> setConfirmPassword(e.target.value)}
                     />
                     {

@@ -64,7 +64,7 @@ return (
             <br/>
             <div>
                 <label>Name (20 character limit):  </label>
-                <input maxLength="20" value={name} onChange={(e)=> setName(e.target.value)} type="text"/>
+                <input maxLength="20" value={name} onChange={(e)=> setName(e.target.value)} type="text" autoFocus/>
                     <br/>
                     {
                         errors.name?
