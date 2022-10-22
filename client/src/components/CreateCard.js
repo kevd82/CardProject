@@ -53,7 +53,7 @@ const submitHandler=((e)=>{
 
 return (
     <div>
-        <h1>Burning Sands Character Cards: Creation</h1>
+        <h1>Burning Sands Character Cards Creator</h1>
         
         <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", fontWeight: "622", borderRadius: "12px", padding: "15px 32px", backgroundSize: "100%", marginLeft: "5px", marginRight: "5px"}}> <Link style={{color: "black"}} to = {"/DisplayAll"}>Home</Link></button>
         
