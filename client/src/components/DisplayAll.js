@@ -66,22 +66,15 @@ useEffect(() => {
     };
 
 
-
-
-
-         
-    
-
-
-
-
     return (
     <div>
-        <h1>Burning Sands Character Cards</h1>
-        <h3>Please click "Show Card" to  view and download printable card.</h3>
+        <div style={{display: "inline-flex"}}>
+            <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}><Link style={{color: "black"}} to = {"/createCard"}>Add new card</Link></button>
+            <h1 style={{marginLeft: "22px", marginRight: "22px"}}>Burning Sands Character Cards</h1>
+            <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", padding: "15px 32px", backgroundSize: "100%", margin: "22px", fontWeight: "622"}} onClick= {logout}>Logout</button></div>
+         
             <br/>
-            <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}><Link style={{color: "black"}} to = {"/createCard"}>Add new card</Link></button> <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", padding: "15px 32px", backgroundSize: "100%", margin: "22px", fontWeight: "622"}} onClick= {logout}>Logout</button> 
-            <br/>
+            <h3>Please click "Show Card" to  view and download printable card.</h3>
 
             <div style={{ padding: "30px"}}>
 

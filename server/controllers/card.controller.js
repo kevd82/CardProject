@@ -47,8 +47,8 @@ module.exports = {
             res.json(oneCard);
         })
         .catch((err)=>{
-            console.log("Error with findOnePet");
-            res.json({message: "Error with findOnePet", error: err})
+            console.log("Error with findOneCard");
+            res.json({message: "Error with findOneCard", error: err})
         })
     },
 

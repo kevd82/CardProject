@@ -31,28 +31,24 @@ const CardSchema = new mongoose.Schema({
 
     abilityOne: {
         type: String,
-        maxLength: [23, "Abilities must not contain more than 23 characters!"],
     },
 
     abilityTwo: {
         type: String,
-        maxLength: [23, "Abilities must not contain more than 23 characters!"],
     },
 
     abilityThree: {
         type: String,
-        maxLength: [23, "Abilities must not contain more than 23 characters!"],
     },
 
     abilityFour: {
         type: String,
-        maxLength: [23, "Abilities must not contain more than 23 characters!"],
     },
 
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-     },
+    },
 
 
 

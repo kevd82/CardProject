@@ -20,10 +20,8 @@ const LoginReg = (props) =>{
             <div style={{display: "inline-block", position: "absolute", right: "50px", width: "400px",padding: "15px 5px 5px 5px"}}><img style={{height: "100%", width: "100%"}} src={ImageRS}/>
             </div>
             
-                <div style={{display: "inline-block", padding: "55px 0px 5px 0px" }}><h1>Burning Sands Character Cards</h1>
+            <div style={{display: "inline-block", padding: "55px 0px 5px 0px" }}><h1>Burning Sands Character Card Creator</h1>
                 <br/>
-            
-           
 
                 <h3>Create and update cards for heroes and foes to use in your Burning Sands games!</h3>
                 </div>
@@ -32,7 +30,7 @@ const LoginReg = (props) =>{
         
             
             
-            <div style={{display: "inline"}}>
+            <div>
             <Login />
             <Reg />
             </div>

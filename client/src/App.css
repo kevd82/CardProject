@@ -1,8 +1,236 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .button:active {
-  color: "black"
+    color: black;
 }
+
+.CardAbility {
+    width: 100%; 
+    height: 50px;  
+    margin: 5px;
+}
+
+.CardContainer {
+    display: inline-flex; 
+    padding: 22px; 
+    width: 930px; 
+    height: 600px; 
+    border: 2px solid black;
+    margin-left: auto; 
+    margin-right: auto;
+    background: #f8ecc2; 
+    font-weight: 322;
+}
+
+.CardLeft {
+    text-align: center; 
+    padding: 18px 22px 18px 22px; 
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    background-size: cover; 
+    border: 1px solid black; 
+    width: 465px; 
+    height: 550px; 
+    border-radius: 25px;
+}
+
+.CardRightUpper {
+    text-align: center;
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    background-size: cover; 
+    border: 1px solid black; 
+    width: 425px; 
+    height: 260; 
+    margin-bottom: 40px;
+    margin-left: 15px;   
+}
+
+.CardRightUpperHeader {
+    height: 50px;
+    font-family: Crom; 
+    color: #a10306; 
+    font-size: 22px; 
+    letter-spacing: 3px; 
+    text-shadow:  -1px 0 black, 2px 0 black,2px 0 black, -1px 0 black;
+}
+
+.CardRightLower {
+    text-align: center; 
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    background-size: cover; 
+    border: 1px solid black;
+    width: 425px; 
+    height: 300;
+    margin-left: 15px;   
+}
+
+.CardRightLowerHeader {
+    width: 100; 
+    font-family: Crom; 
+    color: #a10306; 
+    font-size: 22px; 
+    letter-spacing: 5px; 
+    text-shadow:  -1px 0 black, 2px 0 black,2px 0 black, -1px 0 black; 
+    height: 50px;
+}
+
+.CardRightLowerBody {
+    font-family: Crom; color: #a10306; font-size: 22px; word-wrap: normal; letter-spacing: 3px; text-shadow:  -1px 0 black, 2px 0 black,2px 0 black, -1px 0 black; border: 1px solid black;
+}
+
+
+
+.CardName {
+    font-family: Crom; 
+    color:#a10306; 
+    font-size: 30px;  
+    width: 400px; 
+    height: 50px; 
+    text-shadow: -1px 0 black, 2px 0 black, 2px 0 black, -1px 0 black; 
+    word-spacing: 5px;
+}
+
+.CardImage { 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 400px; 
+    height: 450px; 
+    align-items: center; 
+} 
+
+.CardStats {
+    width: 400px; 
+    height: 50px; 
+    word-spacing: 50px; 
+    font-family: Crom; 
+    color: #a10306; 
+    font-size: 42px; 
+    text-shadow:  -1px 0 black, 2px 0 black,2px 0 black, -1px 0 black;
+}
+.CreateCardHeader {
+    display: inline-flex;
+}
+
+.CreateCardContainer {
+    display: flex; 
+    justify-content: center;  
+    border: 1px solid black; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 22px; 
+    width: 600px; 
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    background-size: cover; 
+    font-weight: 622; 
+    padding-bottom: 25px; 
+    border-radius: 25px;
+}
+
+.CreateCardForm {
+    text-align: left;
+    margin-left: 200px; 
+    margin-right: 150px; 
+    
+}
+
+.CreateFormButton {
+    background-color: red; 
+    font-size: 18px; 
+    font-weight: 622; 
+    margin-left: 5px; 
+    margin-right: 5px; 
+    border-radius: 12px;
+}
+
+.DisplayOneHeader {
+    display: inline-flex;
+}
+
+.DownloadButton {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    border-radius: 12px; 
+    font-weight: 622;
+    padding: 15px 32px; 
+    background-size: 100%; 
+    margin: 22px;
+}
+
+
+.HomeButton {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg);
+    font-weight: 622;
+    border-radius: 12px; 
+    padding: 15px 32px; 
+    background-size: 100%;
+    margin: 22px;
+}
+
+
+.loginErrorText {
+    color: red;
+    font-weight: 722;
+}
+
+.loginFormContainer {
+    text-align:center; 
+    margin-left:auto; 
+    margin-right:auto; 
+    width:500px;
+}
+
+.loginForm {
+    margin-left:auto; 
+    margin-right:auto; 
+    width: 100%; 
+    font-weight: 622;
+}
+
+.loginButton {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    border-radius: 12px; 
+    font-weight: 622; 
+    padding: 15px 32px;           
+    background-size: 100%; 
+    margin: 22px;
+}
+
+.logoutButton {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    border-radius: 12px; 
+    padding: 15px 32px; 
+    background-size: 100%; 
+    margin: 22px; 
+    font-weight: 622;
+}
+
+.RegContainer {
+    text-align: center;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 500px;
+}
+
+.RegForm {
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100%; 
+    font-weight: 622;
+}
+
+.RegButton {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    border-radius: 12px; 
+    font-weight: 622; 
+    padding: 15px 32px; 
+    background-size: 100%; 
+    margin: 22px;
+}
+
+
+
+
+
+
+
 

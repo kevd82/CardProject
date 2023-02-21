@@ -3,6 +3,7 @@ import axios from "axios";
 import {Link, useNavigate, useParams} from "react-router-dom";
 
 
+
 const Login = (props)=>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,7 +14,7 @@ const Login = (props)=>{
 
     
         
-      
+
 
     const login = (e) => {
         e.preventDefault();
@@ -47,13 +48,21 @@ const Login = (props)=>{
 return (
     <div>
         <h1>Login</h1>
-            <p style={{color: "red", fontWeight: "722"}} className="error-text">{errorMessage ? errorMessage : ""}</p>
-            <div style={{textAlign:"center", marginLeft:"auto", marginRight:"auto", width:"500px"}} >
-            <form style={{marginLeft:"auto", marginRight:"auto", width: "100%", fontWeight: "622"}} onSubmit={login}>
+            <p className="loginErrorText"
+            >{errorMessage ? 
+            errorMessage 
+            :null }
+            </p>
+            
+            <div className="loginFormContainer"/>
+            <form className= "loginForm"
+    
+            onSubmit={login}>
                 <div>
                     <label>Email</label>
                     <br/>
                     <input
+                        style={{textAlign: "center"}}
                         type="text"
                         name="email"
                         value={email}
@@ -65,13 +74,18 @@ return (
                     <label>Password</label>
                     <br/>
                     <input
+                        style={{textAlign: "center"}}
                         type="password"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <div> <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}>Log In!</button>
+                <div> 
+                    { <button className="loginButton">Log In!</button>}
+                    <p>
+                        <Link to={"/forgot"}>Forgot password?</Link>
+                    </p>
                 </div>
             </form>
             </div>
@@ -80,7 +94,7 @@ return (
 
 
 
-    </div>
+    
 
 
 

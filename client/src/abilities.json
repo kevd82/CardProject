@@ -1,0 +1,212 @@
+
+{
+    "AbilitiesInfo": [
+    {
+    "id": 1,
+    "name": "Acrobat",
+    "description": "Add 3cm to Prowess tasks when climbing (added after roll is halved) and reduce difficulty for falling task rolls by 3."
+    },
+
+    {
+    "id": 2,
+    "name": "Armour Breaker",
+    "description": " -1 to foes armour value."
+    },
+
+    {
+    "id": 3,
+    "name": "Battle Cry",
+    "description": "Once per game, a battle cry causes all foes within X (X=hero vitality) cm to have a penalty of -X to rolls for the remainder of the turn; this counts as a task with difficulty 0."
+    },
+
+    {
+    "id": 4,
+    "name": "Born In The Saddle",
+    "description": "No Vitality point cost to ride a horse."
+    },
+
+    {
+    "id": 5,
+    "name": "Brute",
+    "description": "+3 to Prowess rolls involving brute strength."
+    },
+
+    {
+    "id": 6,
+    "name": "Dark Soul",
+    "description": "+2 to all Summoning rolls."
+    },
+
+    {
+    "id": 7,
+    "name": "Defensive Fighter",
+    "description": "+2 to defense rolls, but no damage dealt if combat won."
+    },
+
+    {
+    "id": 8,
+    "name": "Devout",
+    "description": "+2 to rituals or tasks related to your faith."
+    },
+
+    {
+    "id": 9,
+    "name": "Disarm",
+    "description": "If a critical is rolled, foe may be disarmed rather than dealt an extra point of damage. Foe now fights with the unarmed penalty."
+    },
+
+    {
+    "id": 10,
+    "name": "Eagle Eyed",
+    "description": "+2 to Wits tasks based upon perception."
+    },
+
+    {
+    "id": 11,
+    "name": "Fast",
+    "description": "+2 to all movement related Prowess tasks."
+    },
+
+    {
+    "id": 12,
+    "name": "Fearless",
+    "description": "+3 to fear related tasks."
+    },
+
+    {
+    "id": 13,
+    "name": "Good Aim",
+    "description": "+2 to archery tasks."
+    },
+
+    {
+    "id": 14,
+    "name": "Good Luck Charm",
+    "description": "Once per game another character may add +4 to any roll."
+    },
+
+    {
+    "id": 15,
+    "name": "Healing Hands",
+    "description": "+2 to healing tasks."
+    },
+
+    {
+    "id": 16,
+    "name": "Knockback",
+    "description": "A critical may be used to knock an opponent back 2cm (4cm if you have a shield) in place of increased damage."
+    },
+
+    {
+    "id": 17,
+    "name": "Light Fingered",
+    "description": "+2 to lockpicking and pick-pocketing type tasks."
+    },
+
+    {
+    "id": 18,
+    "name": "Light Footed",
+    "description": "+2 to stealth tasks."
+    },
+
+    {
+    "id": 19,
+    "name": "Lightning Reflexes",
+    "description": "+2 to initiative rolls."
+    },
+
+    {
+    "id": 20,
+    "name": "Listened To By The Gods",
+    "description": "Once per game you may re-roll a single task."
+    },
+
+    {
+    "id": 21,
+    "name": "Lucky Blow",
+    "description": "Once per gam you may turn a draw in hand to hand combat into a win."
+    },
+
+    {
+    "id": 22,
+    "name": "Martial Artist",
+    "description": "No penalty for fighting without a weapon."
+    },
+
+    {
+    "id": 23,
+    "name": "Mithridates",
+    "description": "Grants immunity to poisons."
+    },
+
+    {
+    "id": 24,
+    "name": "Night Sight",
+    "description": "Can see in near total darkness as if it were day."
+    },
+
+    {
+    "id": 25,
+    "name": "Pack Animal",
+    "description": "No movement penalty from wearing armor."
+    },
+
+    {
+    "id": 26,
+    "name": "Scholar",
+    "description": "+2 to Wits tasks involving recollection of knowledge."
+    },
+
+    {
+    "id": 27,
+    "name": "Tough As Old Boots",
+    "description": "Ignore the first point of damage taken in each game."
+    },
+
+    {
+    "name": "-- CREATURE ONLY ABILITIES --"
+    },
+
+    {
+    "id": 28,
+    "name": "Ambush",
+    "description": "Creature Only: Foes passing within 7cm must make a Wits task against a difficulty of 7 or be ambushed; this attack may not be defended against (worn armour bonuses still apply."
+    },
+
+    {
+    "id": 29,
+    "name": "Armoured Hide",
+    "description": "Creature Only: Creature is considered to have heavy armour."
+    },
+
+    {
+    "id": 30,
+    "name": "Crushing Blow",
+    "description": "Creature Only: Causes critical on 5 or 6."
+    },
+
+    {
+    "id": 31,
+    "name": "Piercing",
+    "description": "Creature Only: Same as Armour Breaker but does not apply to shields."
+    },
+
+    {
+    "id": 32,
+    "name": "Regeneration",
+    "description": "Creature Only: At the end of any turn in which the creature took damage, roll 1 D6; on a 6 restore 1 Vitality point."
+    },
+
+    {
+    "id": 33,
+    "name": "Sprint",
+    "description": "Creature Only: Once per game, for one turn double rolled movement distance."
+    },
+
+    {
+    "id": 34,
+    "name": "Thick Hide",
+    "description": "Creature Only: Creature is considered to have light armour."
+    }
+]
+}

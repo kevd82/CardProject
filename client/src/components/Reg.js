@@ -53,14 +53,15 @@ const Reg = (props)=>{
         <div>
             <h1>Register</h1>
             {confirmReg ? <h4 style={{ color: "blue", fontWeight: "722" }}>{confirmReg}</h4> : null}
-            <br/>
+            
         
-            <div style={{textAlign:"center", marginLeft:"auto", marginRight:"auto", width:"500px"}}></div>
-            <form style={{marginLeft:"auto", marginRight:"auto", width: "100%", fontWeight: "622"}} onSubmit={register}>
+            <div className="RegContainer" ></div>
+            <form classname="RegForm"  onSubmit={register}>
                 <div>
-                    <label>Username: 30 characters or less</label>
+                    <label>Username</label>
                     <br/>
-                    <input
+                    <input style={{textAlign: "center"}}
+                        placeholder="* 30 characters or less *"
                         minLength="2"
                         maxLength="30"
                         type="text"
@@ -127,7 +128,7 @@ const Reg = (props)=>{
                     }
                 </div>
                 <div>
-                    <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}>Register!</button>
+                    <button className="RegButton">Register!</button>
                 </div>
             </form>
         

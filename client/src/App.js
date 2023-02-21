@@ -7,12 +7,15 @@ import CreateCard from "./components/CreateCard";
 import DisplayOne from "./components/DisplayOne";
 import UpdateCard from "./components/UpdateCard";
 import LoginReg from "./views/LoginReg";
+import Forgot from "./components/Forgot";
+
 
 
 function App() {
 
 
   return (
+    
     <BrowserRouter>
     <div className="App">
       <Routes>
@@ -21,13 +24,14 @@ function App() {
         <Route path="/displayOne/:id" element={<DisplayOne/>} />
         <Route path="/update/:id" element={<UpdateCard/>} />
         <Route path="/displayAll" element={<DisplayAll/>}/>
-        
-        
+        <Route path="/forgot" element={<Forgot/>}/>
 
       </Routes>
       
     </div>
+
     </BrowserRouter>
+    
   );
 }
 
