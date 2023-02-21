@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {Link, useNavigate, useParams} from "react-router-dom";
 import html2canvas from "html2canvas";
-import faeded from "./Faeded.jpg";
 
 
 
@@ -89,7 +88,7 @@ return (
         
         <div ref={printRef} className="CardContainer"> 
             <div>
-                <table  className="CardLeft" >
+                <table className="CardLeft" >
                     <tr className="CardName">{card.name}</tr> 
                     <tr><img className="CardImage"src ={card.image}></img></tr>
                     <tr className="CardStats" >

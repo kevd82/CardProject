@@ -8,6 +8,7 @@ import DisplayOne from "./components/DisplayOne";
 import UpdateCard from "./components/UpdateCard";
 import LoginReg from "./views/LoginReg";
 import Forgot from "./components/Forgot";
+import "./images/Faeded.png"
 
 
 

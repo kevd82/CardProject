@@ -19,15 +19,15 @@
     height: 600px; 
     border: 2px solid black;
     margin-left: auto; 
-    margin-right: auto;
-    background: #f8ecc2; 
+    margin-right: auto; 
     font-weight: 322;
+    background: #f8ecc2;
 }
 
 .CardLeft {
-    text-align: center; 
+    text-align: center;
+    background-image: url("./images/Faeded.png");  
     padding: 18px 22px 18px 22px; 
-    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
     background-size: cover; 
     border: 1px solid black; 
     width: 465px; 
@@ -37,7 +37,7 @@
 
 .CardRightUpper {
     text-align: center;
-    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    background-image: url("./images/Faeded.png"); 
     background-size: cover; 
     border: 1px solid black; 
     width: 425px; 
@@ -57,7 +57,7 @@
 
 .CardRightLower {
     text-align: center; 
-    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    background-image: url("./images/Faeded.png");  
     background-size: cover; 
     border: 1px solid black;
     width: 425px; 
@@ -76,9 +76,14 @@
 }
 
 .CardRightLowerBody {
-    font-family: Crom; color: #a10306; font-size: 22px; word-wrap: normal; letter-spacing: 3px; text-shadow:  -1px 0 black, 2px 0 black,2px 0 black, -1px 0 black; border: 1px solid black;
+    font-family: Crom; 
+    color: #a10306; 
+    font-size: 22px; 
+    word-wrap: normal; 
+    letter-spacing: 3px; 
+    text-shadow:  -1px 0 black, 2px 0 black,2px 0 black, -1px 0 black; 
+    border: 1px solid black;
 }
-
 
 
 .CardName {
@@ -225,6 +230,36 @@
     padding: 15px 32px; 
     background-size: 100%; 
     margin: 22px;
+}
+
+.LogRegHeaderContainer {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg);
+    background-size: cover; 
+    height: 300px; 
+    outline: 1px solid black; 
+    margin: 2px;
+}
+
+
+.LogRegHeaderImageLeft{
+    display: inline-block;
+    position: absolute; 
+    right: 50px; 
+    width: 400px;
+    padding: 15px 5px 5px 5px;
+}
+
+.LogRegHeaderImageRight{
+    display: inline-block;
+    position: absolute; 
+    left: 50px; 
+    width: 400px;
+    padding: 15px 5px 5px 5px;
+}
+
+.LogRegHeader {
+    display: inline-block; 
+    padding: 55px 0px 5px 0px;
 }
 
 
