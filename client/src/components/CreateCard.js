@@ -106,6 +106,7 @@ return (
             
                 <div>
                     <label>Image (.JPG or .PNG files):</label><p></p>
+                    <input value = {image}/>
                     <FileBase64
                     multiple={false}
                     onDone={({base64})=>setImage( base64)}/>

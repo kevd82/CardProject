@@ -38,6 +38,25 @@ const UpdateCard = (props)=>{
         .catch((err)=>console.log(err))
     }, [id])
 
+    const logout = (e) => {
+        axios
+            .post(
+                "http://localhost:8000/api/user/logout",
+                {}, 
+                {
+                    withCredentials: true,
+                },
+            )
+            .then((res) => {
+                console.log(res);
+                console.log(res.data);
+                navigate("/");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+
     
     const submitHandler=((e)=>{
         e.preventDefault();
@@ -66,6 +85,9 @@ const UpdateCard = (props)=>{
             setErrors(err.response.data.errors);
     
     });
+
+    
+
     
     });
 
@@ -76,15 +98,17 @@ const UpdateCard = (props)=>{
 
 return (
     <div>
-        <h1>Burning Sands Character Cards: Update</h1>
-
-        <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}> <Link style={{color: "black"}} to = {"/DisplayAll"}>Home</Link></button>
-        <br/>
+        <div className="UpdateCardHeader">
+            <button className="HomeButton"> <Link style={{color: "black"}} to = {"/DisplayAll"}
+            >Home</Link></button> 
+            <h1 style = {{ marginLeft: "22px", marginRight: "22px"}}>Burning Sands Character Cards Update</h1> 
+            <button className="logoutButton" onClick= {logout}>Logout</button> 
+        </div>
         <br/>
     
         
-        <div style={{ display: "flex", justifyContent: "center",  border: "1px solid black", marginLeft:"auto", marginRight:"auto", width:"600px", background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", backgroundSize: "cover", fontWeight: "622", paddingBottom: "12px", borderRadius: "25px"}}>
-        <form onSubmit={submitHandler} style={{marginLeft:"auto", marginRight:"auto", textAlign: "left", marginLeft:"200px", marginRight:"150px", height: "100%", width:"350px"}}>
+        <div className="UpdateCardContainer">
+        <form onSubmit={submitHandler} className="UpdateCardForm" >
         <br/>
         <div>
                 <label>Name (20 character limit)  </label>
@@ -101,9 +125,11 @@ return (
             <div>
             <label>Image (.JPG or .PNG files):  </label>
                 
-                <FileBase64
-                multiple={false}
-                onDone={({base64})=>setImage( base64)}/>
+                <input value = {image}/>
+                    <FileBase64
+                    multiple={false}
+                    onDone={({base64})=>setImage( base64)}/>
+            
                 
                     <br/>
                     {
@@ -235,7 +261,7 @@ return (
                     
             </div>
             <br/>
-            <button style = {{backgroundColor: "red", fontSize: "16px", fontWeight: "622", marginLeft: "5px", marginRight: "5px", borderRadius: "12px"}}>Update Character Card!</button>
+            <button className="UpdateFormButton">Update Character Card!</button>
 
 
 
