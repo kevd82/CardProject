@@ -4,10 +4,12 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 
 
 const Reg = (props)=>{
-    const [username, setUserName] = useState("");
+    const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
+    const [securityQuestionOne, setSecurityQuestionOne] = useState("");
+    const [securityQuestionTwo, setSecurityQuestionTwo] = useState("");
 
     const [confirmReg, setConfirmReg] = useState("");
     const [errors, setErrors] = useState({});
@@ -26,15 +28,19 @@ const Reg = (props)=>{
             email: email,
             password: password,
             confirmPassword: confirmPassword,
+            securityQuestionOne: securityQuestionOne,
+            securityQuestionTwo: securityQuestionTwo,
         
                 withCredentials: true,
             })
             .then ((res)=>{
                 console.log(res.data);
-                setUserName("");
+                setUsername("");
                 setEmail("");
                 setPassword("");
                 setConfirmPassword("");
+                setSecurityQuestionOne("");
+                setSecurityQuestionTwo("");
                 setConfirmReg("Thanks for registering; you may now login!");
                 setErrors({});
                 navigate("/");
@@ -68,7 +74,7 @@ const Reg = (props)=>{
                         name="username"
                     
                         value={username}
-                        onChange={(e) => setUserName(e.target.value)}
+                        onChange={(e) => setUsername(e.target.value)}
 
                     />
                     {
@@ -81,7 +87,7 @@ const Reg = (props)=>{
                 <div>
                     <label>Email</label>
                     <br/>
-                    <input
+                    <input style={{textAlign: "center"}}
                         type="email"
                         name="email"
                         value={email}
@@ -97,7 +103,7 @@ const Reg = (props)=>{
                 <div>
                     <label>Password</label>
                     <br/>                    
-                    <input
+                    <input style={{textAlign: "center"}}
                         type="password"
                         name="password"
                         value={password}
@@ -113,7 +119,7 @@ const Reg = (props)=>{
                 <div>
                     <label>Confirm Password</label>
                     <br/>                    
-                    <input
+                    <input style={{textAlign: "center"}}
                 
                         type="password"
                         name="confirmPassword"
@@ -127,6 +133,41 @@ const Reg = (props)=>{
                         :null
                     }
                 </div>
+                <div>
+                    <label>Please enter your mother's maiden name.</label>
+                    <br/>                    
+                    <input style={{textAlign: "center"}}
+                        placeholder = "Security Question One"
+                        type="text"
+                        name="securityQuestionOne"
+                        value={securityQuestionOne}
+                        
+                        onChange={(e)=> setSecurityQuestionOne(e.target.value)}
+                    />
+                    {
+                        errors.securityQuestionOne?
+                        <p style={{color: "red", fontWeight: "722"}}>{errors.securityQuestionOne.message}</p>
+                        :null
+                    }
+                </div>
+                <div>
+                    <label>Please enter the make and model of your first car.</label>
+                    <br/>                    
+                    <input style={{textAlign: "center"}}
+                        placeholder = "Security Question Two"
+                        type="text"
+                        name="securityQuestionTwo"
+                        value={securityQuestionTwo}
+                        
+                        onChange={(e)=> setSecurityQuestionTwo(e.target.value)}
+                    />
+                    {
+                        errors.securityQuestionTwo ?
+                        <p style={{color: "red", fontWeight: "722"}}>{errors.securityQuestionTwo.message}</p>
+                        :null
+                    }
+                </div>
+                
                 <div>
                     <button className="RegButton">Register!</button>
                 </div>

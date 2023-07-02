@@ -83,11 +83,18 @@ module.exports = {
     },
 
     getLoggedInUser: (req, res)=>{
-
-        // const decodedJWT = jwt.decode(req.cookies.usertoken, {
-            // complete: true
-        // })
         User.findOne({_id: req.jwtpayload.id})
+        .then((user)=>{
+            console.log(user);
+            res.json(user);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    },
+
+    findUserByEmail: (req,res)=>{
+        User.findOne({email: emailValue})
         .then((user)=>{
             console.log(user);
             res.json(user);

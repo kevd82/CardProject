@@ -4,7 +4,11 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 
 
 const Forgot = (props)=>{
-    const [email, setEmail] = useState("");
+    const [emailValue, setEmailValue] = useState("");
+
+    const [securityQuestionOneValue, setSecurityQuestionOneValue] = useState("");
+
+    const [securityQuestionTwoValue, setSecurityQuestionTwoValue] = useState("");
 
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -13,10 +17,12 @@ const Forgot = (props)=>{
     
 
 
-    const handleSubmit = (e) => {
+    const handleSubmitForgotForm = (e) => {
+        
         e.preventDefault();
         
-    };
+        
+    }
 
 
 
@@ -25,42 +31,62 @@ return (
     <div>
         <h1>Forgot Password?</h1>
             <p style={{color: "red", fontWeight: "722"}} className="error-text">{errorMessage ? errorMessage : ""}</p>
-            <div style={{textAlign:"center", marginLeft:"auto", marginRight:"auto", width:"500px"}} >
-            <form style={{marginLeft:"auto", marginRight:"auto", width: "100%", fontWeight: "622"}} onSubmit={handleSubmit}>
+            <div classname="ForgotContainer"  >
+            <form className="ForgotForm" onSubmit={handleSubmitForgotForm}>
                 <div>
                     <label>Please enter the email associated with your account.</label>
-                    <br/>
                     <br/>
                     <input
                         autoFocus
                         style={{textAlign: "center", width: "200px", height: "20px"}}
+                        placeholder = "Email"
                         type="text"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        
+                        name="emailValue"
+                        value={emailValue}
+                        onChange={(e) => setEmailValue(e.target.value)}
+                    />
+                    <br/>
+                    <br/>
+
+                    <label>Please enter your mother's maiden name.</label>
+                    <br/>
+                    <input
+                    style={{textAlign: "center", width: "200px", height: "20px"}}
+                    placeholder = "Security Question One"
+                    type="text"
+                    name="securityQuestionOneValue"
+                    value={securityQuestionOneValue}
+                    onChange={(e) => setSecurityQuestionOneValue(e.target.value)}
+                    />
+                    <br/>
+                    <br/>
+
+                    <label>Please enter the make and model of your first car. </label>
+                    <br/>
+                    <input
+                        style={{textAlign: "center", width: "200px", height: "20px"}}
+                        placeholder = "Security Question Two"
+                        type="text"
+                        name="securityQuestionTwoValue"
+                        value={securityQuestionTwoValue}
+                        onChange={(e) => setSecurityQuestionTwoValue(e.target.value)}
                     />
                 </div>
                 
-            
                 <div> 
-                    <button style={{background: "Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg)", borderRadius: "12px", fontWeight: "622", padding: "15px 32px", backgroundSize: "100%", margin: "22px"}}>Submit to receive reset link</button>
+                    <button className="ForgotButton" disabled={(!emailValue||!securityQuestionOneValue||!securityQuestionTwoValue)}>Submit to reset password.</button>
                     
                 </div>
             </form>
+            
             </div>
     
-
-
-
-
     </div>
 
 
 
 
+
 )
-
-
 }
 export default Forgot;

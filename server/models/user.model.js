@@ -17,6 +17,16 @@ const UserSchema = new mongoose.Schema({
         unique: [true],
     },
 
+    securityQuestionOne: {
+        type: String,
+        required: [true, "Security question one is required!"],
+    },
+
+    securityQuestionTwo: {
+        type: String,
+        required: [true, "Security question two is required!"],
+    },
+
     password: {
         type: String,
         required: [true, "Password is required!"],

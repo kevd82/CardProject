@@ -351,6 +351,29 @@
     padding: 5px;
 }
 
+.ForgotContainer {
+    text-align: "center"; 
+    margin-left: "auto"; 
+    margin-right: "auto"; 
+    width:"500px";
+}
+
+.ForgotForm {
+    margin-left: "auto"; 
+    margin-right: "auto"; 
+    width: "100%"; 
+    font-weight: "622";
+}
+
+.ForgotButton {
+    background: Url(https://i.ibb.co/8zmvzpQ/Faeded.jpg); 
+    border-radius: 12px; 
+    font-weight: 622; 
+    padding: 15px 32px; 
+    background-size: 100%; 
+    margin: 22px;
+}
+
 
 
 
