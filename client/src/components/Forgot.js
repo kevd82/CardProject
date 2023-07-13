@@ -20,6 +20,7 @@ const Forgot = (props)=>{
     const handleSubmitForgotForm = (e) => {
         
         e.preventDefault();
+        axios.get("http://localhost:8000/api/user/forgot")
         
         
     }

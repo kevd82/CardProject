@@ -20,8 +20,7 @@ const CreateCard = (props)=>{
     const navigate = useNavigate();
 
     const logout = (e) => {
-        axios
-            .post(
+        axios.post(
                 "http://localhost:8000/api/user/logout",
                 {}, 
                 {
