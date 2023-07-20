@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 
 const ResetPassword = (props)=>{
@@ -17,8 +17,22 @@ const ResetPassword = (props)=>{
         })
         .catch((err)=>console.log(err))
     }, [id])
-}
+
 
 const submitResetHandler=((e)=>{
     e.preventDefault();
+
+    navigate("/");
 })
+
+
+
+
+
+return (
+    <div>
+
+    </div>
+)
+}
+export default ResetPassword;

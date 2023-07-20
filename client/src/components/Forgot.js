@@ -4,7 +4,7 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 
 
 const Forgot = (props)=>{
-    const [email, setEmail] = useState("");
+    const [emailValue, setEmailValue] = useState("");
 
     const [securityQuestionOneValue, setSecurityQuestionOneValue] = useState("");
 
@@ -20,8 +20,8 @@ const Forgot = (props)=>{
     const handleSubmitForgotForm = (e) => {
         
         e.preventDefault();
-        axios.get(`http://localhost:8000/api/user/${email}`)
-        
+        axios.get(`http://localhost:8000/api/user/${emailValue}`)
+        navigate("/");
         
     }
 
@@ -42,9 +42,9 @@ return (
                         style={{textAlign: "center", width: "200px", height: "20px"}}
                         placeholder = "Email"
                         type="text"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        name="emailValue"
+                        value={emailValue}
+                        onChange={(e) => setEmailValue(e.target.value)}
                     />
                     <br/>
                     <br/>

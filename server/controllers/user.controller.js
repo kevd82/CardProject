@@ -93,6 +93,18 @@ module.exports = {
         })
     },
 
+    findOneUser: (req, res)=>{
+        User.findOne({_id: req.params.id})
+        .then((oneUser)=>{
+            console.log(oneUser);
+            res.json(oneUser);
+        })
+        .catch((err)=>{
+            console.log("Error with findOneUser");
+            res.json({message: "Error with findOneUser", error: err})
+        })
+    },
+
     findUserByEmail: (req,res)=>{
         User.findOne({email: emailValue})
         .then((user)=>{

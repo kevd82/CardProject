@@ -1,6 +1,5 @@
 import React from "react";
 import './App.css';
-import axios from "axios";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import DisplayAll from "./components/DisplayAll";
 import CreateCard from "./components/CreateCard";
@@ -8,6 +7,7 @@ import DisplayOne from "./components/DisplayOne";
 import UpdateCard from "./components/UpdateCard";
 import LoginReg from "./views/LoginReg";
 import Forgot from "./components/Forgot";
+import ResetPassword from "./components/ResetPassword";
 import "./images/Faeded.png"
 
 
@@ -26,6 +26,7 @@ function App() {
         <Route path="/update/:id" element={<UpdateCard/>} />
         <Route path="/displayAll" element={<DisplayAll/>}/>
         <Route path="/forgot" element={<Forgot/>}/>
+        <Route path="resetpassword/:id" element={<ResetPassword/>}/>
 
       </Routes>
       
