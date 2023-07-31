@@ -22,6 +22,7 @@ const Forgot = (props)=>{
         axios.get(`http://localhost:8000/api/user/${emailValue}`)
         .then((res)=>{
             console.log(res.data)
+            // ternary to check for email, and both security questions before navigate
             navigate("/resetPassword/:id");
         })
         .catch((err)=>{
