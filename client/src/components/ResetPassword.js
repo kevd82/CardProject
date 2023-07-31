@@ -31,7 +31,7 @@ const submitResetHandler=((e)=>{
 
 return (
     <div>
-
+        <h1>{username}</h1>
     </div>
 )
 }

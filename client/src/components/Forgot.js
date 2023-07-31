@@ -14,16 +14,24 @@ const Forgot = (props)=>{
 
     const navigate = useNavigate();
 
-    
 
 
-    const handleSubmitForgotForm = (e) => {
+    const handleSubmitForgotForm = ((e) => {
         
         e.preventDefault();
         axios.get(`http://localhost:8000/api/user/${emailValue}`)
-        navigate("/");
+        .then((res)=>{
+            console.log(res.data)
+            navigate("/resetPassword/:id");
+        })
+        .catch((err)=>{
+            console.log(err);
+
+        })
+
         
-    }
+        
+    }, []);
 
 
 
