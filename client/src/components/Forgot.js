@@ -1,38 +1,58 @@
 import React, {useState} from "react";
 import axios from "axios";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 
 const Forgot = (props)=>{
-    const [emailValue, setEmailValue] = useState("");
+    const [email, setEmail] = useState("");
 
     const [securityQuestionOneValue, setSecurityQuestionOneValue] = useState("");
 
     const [securityQuestionTwoValue, setSecurityQuestionTwoValue] = useState("");
 
-    const [errorMessage, setErrorMessage] = useState("");
+    const [user, setUser] = useState({});
+
+    const [id, setId] = useState("");
+
+
+
+
+    
 
     const navigate = useNavigate();
+
 
 
 
     const handleSubmitForgotForm = ((e) => {
         
         e.preventDefault();
-        axios.get(`http://localhost:8000/api/user/${emailValue}`)
+        axios.get(`http://localhost:8000/api/user/${email}`)
         .then((res)=>{
-            console.log(res.data)
-            // ternary to check for email, and both security questions before navigate
-            navigate("/resetPassword/:id");
+            console.log(res.data);
+            setUser(res.data);
+            setId(res.data._id);
+            
+            {
+                user.securityQuestionOne === securityQuestionOneValue && user.securityQuestionTwo===securityQuestionTwoValue?
+                navigate(`/resetPassword/:${id}`)
+                :navigate("/forgot");
+            }
+            
+
+
+            
+
+            
         })
         .catch((err)=>{
             console.log(err);
 
-        })
+        }, );
 
         
         
-    }, []);
+    });
 
 
 
@@ -40,7 +60,7 @@ const Forgot = (props)=>{
 return (
     <div>
         <h1>Forgot Password?</h1>
-            <p style={{color: "red", fontWeight: "722"}} className="error-text">{errorMessage ? errorMessage : ""}</p>
+        
             <div classname="ForgotContainer"  >
             <form className="ForgotForm" onSubmit={handleSubmitForgotForm}>
                 <div>
@@ -51,9 +71,9 @@ return (
                         style={{textAlign: "center", width: "200px", height: "20px"}}
                         placeholder = "Email"
                         type="text"
-                        name="emailValue"
-                        value={emailValue}
-                        onChange={(e) => setEmailValue(e.target.value)}
+                        name="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                     <br/>
                     <br/>
@@ -84,7 +104,7 @@ return (
                 </div>
                 
                 <div> 
-                    <button className="ForgotButton" disabled={(!emailValue||!securityQuestionOneValue||!securityQuestionTwoValue)}>Submit to reset password.</button>
+                    <button className="ForgotButton" disabled={(!securityQuestionOneValue||!securityQuestionTwoValue)}>Submit to reset password.</button>
                     
                 </div>
             </form>

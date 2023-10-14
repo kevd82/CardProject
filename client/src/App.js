@@ -26,7 +26,7 @@ function App() {
         <Route path="/update/:id" element={<UpdateCard/>} />
         <Route path="/displayAll" element={<DisplayAll/>}/>
         <Route path="/forgot" element={<Forgot/>}/>
-        <Route path="resetPassword/:id" element={<ResetPassword/>}/>
+        <Route path="/resetPassword/:id" element={<ResetPassword/>}/>
 
       </Routes>
       

@@ -106,10 +106,10 @@ module.exports = {
     },
 
     findUserByEmail: (req,res)=>{
-        User.findOne({email: emailValue})
-        .then((user)=>{
-            console.log(user);
-            res.json(user);
+        User.findOne({email: req.params.email})
+        .then((userByEmail)=>{
+            console.log(userByEmail);
+            res.json(userByEmail);
         })
         .catch((err)=>{
             console.log(err);

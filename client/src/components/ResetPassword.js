@@ -15,14 +15,13 @@ const ResetPassword = (props)=>{
             console.log(res.data);
             setPassword(res.data.password);
         })
-        .catch((err)=>console.log(err))
-    }, [id])
+        .catch((err)=>{
+            console.log(err);
+
+        }, );
 
 
-const submitResetHandler=((e)=>{
-    e.preventDefault();
 
-    navigate("/");
 })
 
 
@@ -31,7 +30,7 @@ const submitResetHandler=((e)=>{
 
 return (
     <div>
-        <h1>{username}</h1>
+        <h1>reset page</h1>
     </div>
 )
 }
