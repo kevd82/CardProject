@@ -61,7 +61,7 @@ return (
     <div>
         <h1>Forgot Password?</h1>
         
-            <div classname="ForgotContainer"  >
+            <div className="ForgotContainer"  >
             <form className="ForgotForm" onSubmit={handleSubmitForgotForm}>
                 <div>
                     <label>Please enter the email associated with your account.</label>

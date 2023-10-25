@@ -9,4 +9,6 @@ module.exports = (app)=>{
     app.get("/api/user/:email", UserController.findUserByEmail);
     app.get("/api/user/:id", UserController.findOneUser);
     app.get("/api/user", authenticate, UserController.getLoggedInUser);
+    app.put("/api/user/:id", UserController.resetPassword);
+
 }

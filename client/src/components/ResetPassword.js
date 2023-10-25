@@ -4,32 +4,49 @@ import {useNavigate, useParams} from "react-router-dom";
 
 
 const ResetPassword = (props)=>{
-    const [passwprd, setPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("");
-    const {confirmNewPassword, setNewConfirmPassword} = useState("");
+    const {password, setPassword} = useState("");
+    const {confirmPassword, setConfirmPassword} = useState("");
+    const {email, setEmail} = useState("");
+    const {username, setUsername} = useState("");
+    const {securityQuestionOne, setSecurityQuestionOne} = useState("");
+    const {securityQuestionTwo, setSecurityQuestionTwo} = useState("");
+    
+
     const navigate = useNavigate();
     const {id} = useParams();
-    const [errors, setErrors]= useState("")
+    const [errors, setErrors]= useState("");
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/user/${id}`)
         .then((res)=>{
             console.log(res);
             console.log(res.data);
-            setPassword(res.data.password)
+            setPassword(res.data.password);
+            setUsername(res.data.username);
+            setEmail(res.data.email);
+            setSecurityQuestionOne(res.data.securityQuestionOne);
+            setSecurityQuestionTwo(res.data.securityQuestionTwo);
+
         })
         .catch((err)=>{
             console.log(err);
 
-        }, [id]);
+        }, [id])
 
 
-        const submitHandler=((e)=>{
+        const handleResetForm = ((e)=>{
+
             e.preventDefault();
-            newPassword===confirmNewPassword?
+            
+                {password===confirmPassword?
             axios.put(`http://localhost:8000/api/user/${id}`,
             {
-                password: newPassword
+                password,
+                username,
+                email,
+                securityQuestionOne,
+                securityQuestionTwo,
+
             })
             .then((res)=>{
                 console.log(res);
@@ -45,26 +62,73 @@ const ResetPassword = (props)=>{
                 setErrors(err.response.data.errors);
     
             })
-            :navigate("/resetPassword/:id")
+            :navigate("/resetPassword/:id")}
+        });
+    });
 
 
 
 
-
-        })
-
-
-
-})
-
-
-
-
-
-return (
-    <div>
-        <h1>Password Reset</h1>
-    </div>
-)
-}
-export default ResetPassword;
+        return (
+            <div>
+                <h1>Forgot Password?</h1>
+                
+                    <div className="ForgotContainer"  >
+                    <form className="ForgotForm" onSubmit={handleSubmitForgotForm}>
+                        <div>
+                            <label>Please enter the email associated with your account.</label>
+                            <br/>
+                            <input
+                                autoFocus
+                                style={{textAlign: "center", width: "200px", height: "20px"}}
+                                placeholder = "Email"
+                                type="text"
+                                name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <br/>
+                            <br/>
+        
+                            <label>Please enter your mother's maiden name.</label>
+                            <br/>
+                            <input
+                            style={{textAlign: "center", width: "200px", height: "20px"}}
+                            placeholder = "Security Question One"
+                            type="text"
+                            name="securityQuestionOneValue"
+                            value={securityQuestionOneValue}
+                            onChange={(e) => setSecurityQuestionOneValue(e.target.value)}
+                            />
+                            <br/>
+                            <br/>
+        
+                            <label>Please enter the make and model of your first car. </label>
+                            <br/>
+                            <input
+                                style={{textAlign: "center", width: "200px", height: "20px"}}
+                                placeholder = "Security Question Two"
+                                type="text"
+                                name="securityQuestionTwoValue"
+                                value={securityQuestionTwoValue}
+                                onChange={(e) => setSecurityQuestionTwoValue(e.target.value)}
+                            />
+                        </div>
+                        
+                        <div> 
+                            <button className="ForgotButton" disabled={(!securityQuestionOneValue||!securityQuestionTwoValue)}>Submit to reset password.</button>
+                            
+                        </div>
+                    </form>
+                    
+                    </div>
+            
+            </div>
+        
+        
+        
+        
+        
+        )
+        }
+        export default ResetPassword;

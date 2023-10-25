@@ -114,7 +114,21 @@ module.exports = {
         .catch((err)=>{
             console.log(err);
         })
-    }
+    },
+
+    resetPassword: (req, res)=>{
+        User.findOneAndUpdate({_id: req.params.id},
+            req.body,
+            {new: true, runValidators: true})
+            .then((updatedUser)=>{
+                console.log(updatedUser);
+                res.json(updatedUser);
+            })
+            .catch((err)=>{
+                console.log("Error with resetPassword");
+                res.status(400).json(err);
+            })
+    },
 
 
 }
