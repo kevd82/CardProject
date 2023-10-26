@@ -4,131 +4,104 @@ import {useNavigate, useParams} from "react-router-dom";
 
 
 const ResetPassword = (props)=>{
-    const {password, setPassword} = useState("");
-    const {confirmPassword, setConfirmPassword} = useState("");
-    const {email, setEmail} = useState("");
-    const {username, setUsername} = useState("");
-    const {securityQuestionOne, setSecurityQuestionOne} = useState("");
-    const {securityQuestionTwo, setSecurityQuestionTwo} = useState("");
-    
-
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [securityQuestionOne, setSecurityQuestionOne] = useState("");
+    const [securityQuestionTwo, setSecurityQuestionTwo] = useState("");
     const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
     const {id} = useParams();
-    const [errors, setErrors]= useState("");
 
     useEffect(()=>{
         axios.get(`http://localhost:8000/api/user/${id}`)
         .then((res)=>{
             console.log(res);
             console.log(res.data);
-            setPassword(res.data.password);
             setUsername(res.data.username);
             setEmail(res.data.email);
+            setPassword(res.data.password);
             setSecurityQuestionOne(res.data.securityQuestionOne);
             setSecurityQuestionTwo(res.data.securityQuestionTwo);
-
         })
-        .catch((err)=>{
-            console.log(err);
-
+        .catch((err)=>console.log(err))
         }, [id])
 
 
-        const handleResetForm = ((e)=>{
-
-            e.preventDefault();
-            
-                {password===confirmPassword?
-            axios.put(`http://localhost:8000/api/user/${id}`,
-            {
-                password,
-                username,
-                email,
-                securityQuestionOne,
-                securityQuestionTwo,
-
-            })
-            .then((res)=>{
-                console.log(res);
-                console.log(res.data);
-                setErrors("");
-                navigate("/");
-
-            })
-            .catch((err)=>{
-                console.log("err.response:", err.response);
-                console.log("err.response.data", err.response.data);
-                console.log("err.response.data.errors", err.response.data.errors);
-                setErrors(err.response.data.errors);
-    
-            })
-            :navigate("/resetPassword/:id")}
+    const submitHandler=((e)=>{
+        e.preventDefault();
+        axios.put(`http://localhost:8000/api/user/${id}`,
+        {
+            username,
+            email,
+            password,
+            securityQuestionOne,
+            securityQuestionTwo,
+        })
+        .then((res)=>{
+            console.log(res);
+            console.log(res.data);
+            setErrors("");
+            navigate("/");
+        })
+        .catch((err)=>{
+            console.log("err.response", err.response);
+            console.log("err.response.data", err.response.data);
+            console.log("err.response.data.errors", err.response.data.errors);
+            setErrors(err.response.data.errors);
         });
+
     });
 
+    return (
+        <div>
+            <h1>Reset Password</h1>
 
-
-
-        return (
-            <div>
-                <h1>Forgot Password?</h1>
-                
-                    <div className="ForgotContainer"  >
-                    <form className="ForgotForm" onSubmit={handleSubmitForgotForm}>
-                        <div>
-                            <label>Please enter the email associated with your account.</label>
-                            <br/>
-                            <input
-                                autoFocus
-                                style={{textAlign: "center", width: "200px", height: "20px"}}
-                                placeholder = "Email"
-                                type="text"
-                                name="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <br/>
-                            <br/>
-        
-                            <label>Please enter your mother's maiden name.</label>
-                            <br/>
-                            <input
+                <div className="ResetCOntainer" >
+                <form className= "ResetForm" onSubmit= {submitHandler}>
+                    <div>
+                        <label>Enter new password:</label>
+                        <br/>
+                        <input
+                            autoFocus
                             style={{textAlign: "center", width: "200px", height: "20px"}}
-                            placeholder = "Security Question One"
-                            type="text"
-                            name="securityQuestionOneValue"
-                            value={securityQuestionOneValue}
-                            onChange={(e) => setSecurityQuestionOneValue(e.target.value)}
-                            />
-                            <br/>
-                            <br/>
-        
-                            <label>Please enter the make and model of your first car. </label>
-                            <br/>
-                            <input
-                                style={{textAlign: "center", width: "200px", height: "20px"}}
-                                placeholder = "Security Question Two"
-                                type="text"
-                                name="securityQuestionTwoValue"
-                                value={securityQuestionTwoValue}
-                                onChange={(e) => setSecurityQuestionTwoValue(e.target.value)}
-                            />
-                        </div>
-                        
-                        <div> 
-                            <button className="ForgotButton" disabled={(!securityQuestionOneValue||!securityQuestionTwoValue)}>Submit to reset password.</button>
-                            
-                        </div>
-                    </form>
+                            type="password"
+                            name="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <br/>
+                        <br/>
+
+                        <label>Confirm new password:</label>
+                        <br/>
+                        <input
+                            style={{textAlign: "center", width: "200px", height: "20px"}}
+                            type="password"
+                            name="confirmPassword"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+
+
+                    </div>
+
+                    <div> 
+                        <button className="ResetButton" disabled={(password !== confirmPassword)}>Submit to reset password.</button>
                     
                     </div>
-            
-            </div>
-        
-        
-        
-        
-        
-        )
-        }
-        export default ResetPassword;
+
+
+                </form>
+                </div>
+
+        </div>
+    )
+
+
+
+
+
+}
+export default ResetPassword;
