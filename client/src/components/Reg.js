@@ -62,7 +62,7 @@ const Reg = (props)=>{
             
         
             <div className="RegContainer" ></div>
-            <form classname="RegForm"  onSubmit={register}>
+            <form className="RegForm"  onSubmit={register}>
                 <div>
                     <label>Username</label>
                     <br/>

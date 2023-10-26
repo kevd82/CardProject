@@ -35,9 +35,11 @@ const ResetPassword = (props)=>{
         {
             username,
             email,
-            password,
             securityQuestionOne,
             securityQuestionTwo,
+            password,
+            confirmPassword,
+
         })
         .then((res)=>{
             console.log(res);
@@ -58,7 +60,7 @@ const ResetPassword = (props)=>{
         <div>
             <h1>Reset Password</h1>
 
-                <div className="ResetCOntainer" >
+                <div className="ResetContainer" >
                 <form className= "ResetForm" onSubmit= {submitHandler}>
                     <div>
                         <label>Enter new password:</label>
