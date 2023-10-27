@@ -35,7 +35,7 @@ const Forgot = (props)=>{
             
             {
                 user.securityQuestionOne === securityQuestionOneValue && user.securityQuestionTwo===securityQuestionTwoValue?
-                navigate(`/resetPassword/:${id}`)
+                navigate(`/resetPassword/${id}`)
                 :navigate("/forgot");
             }
             
